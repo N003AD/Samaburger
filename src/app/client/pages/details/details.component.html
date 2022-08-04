@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+
+
+<div class="container-fluid w-75  mt-5 shadow-lg p-3 mb-5 bg-light rounded" >
+  <div class="row w-100 mt-3 mb-3 d-flex justify-content-around">
+    <div class="col-4  ">
+       <h5 class="fs-4 fw-normal">Produit : {{details?.produit.nom}}</h5>
+
+  </div>
+  <div class="col-4 ">
+    <h5 class="fs-4 fw-normal">Montant Produit: {{details?.produit.prix}}CFA</h5>
+</div>
+  </div>
+  <div class="row  mt-5 ">
+    <div class="col-6  " >
+         <div class="row "  >
+             <div class="col-4 shadow-lg p-0 ml-2" style="height:28vh ;width: 35%; margin-left:10px">
+              <img src="data:image/png;base64,{{details?.produit?.image}}"  class="rounded  h-100 w-100 " alt="...">
+             </div>
+             <div class="col-5 fs-6 p-5">
+              Pain grillé, burger 130g, fromage,
+              oignon caramélisé, salade, tomate,
+               oignon rouge, cornichons,
+              mayonnaise sauce et sauce
+              salad spéciale
+
+
+            </div>
+         </div>
+         <div class="row  mt-2">
+          <h4 class="" >Burger Double</h4>
+          <div class="row p-3 gap-2 w-50">
+            <button type="button" class="btn btn-danger btn-sm p-0 text-center w-25 fs-3">-</button>
+             <input type="number" class="form-control text-center w-25 fs-3 " id="input1" aria-describedby="emailHelp">
+             <button type="button" class="btn btn-danger btn-sm p-0 text-center w-25 fs-3">+</button>
+           </div>
+         </div>
+         <div class="row">
+          <div class="col-12 ">
+            <h4 class="mt-2">Burger</h4>
+            <app-liste-details ></app-liste-details>
+            <h4 class="mt-2">Frites</h4>
+            <app-liste-details></app-liste-details>
+            <h4>Les Boisssons du Menu</h4>
+            <app-liste-details [hideQte]="true"></app-liste-details>
+
+
+
+
+    </div>
+         </div>
+    </div>
+    <div class="col-6 ">
+          <h4>Autres Boisssons</h4>
+          <app-liste-details [hideQte]="true"></app-liste-details>
+          <h4 class="mt-2">Frites</h4>
+         <app-liste-details [hideQte]="true"></app-liste-details>
+
+
+  </div>
+  </div>
+  <div class="row ">
+     </div>
+</div>

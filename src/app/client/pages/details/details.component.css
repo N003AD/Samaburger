@@ -1,0 +1,81 @@
+.container
+{
+  position: absolute;
+  display: flex;
+
+flex-direction: row;
+padding: 10%;
+
+}
+
+.burger
+{
+  display: flex;
+flex-direction: column;
+}
+
+ p{
+margin-top: 15%;
+}
+
+.boisson{
+  display: flex;
+  justify-content: flex-end;
+  float: left;
+}
+
+
+/* dtfyguhjk  */
+
+.principal
+{
+  display: flex;
+  color: yellow;
+  /* border: 2px solid black; */
+}
+
+.burger
+{
+  color: black;
+  /* border: 2px solid black; */
+margin-left: 15%;
+
+}
+
+.description{
+  color: black;
+  /* border: 2px solid black; */
+
+}
+
+.boissons
+{
+  color: blue;
+  /* border: 2px solid black; */
+margin-right: 10%;
+display: flex;
+flex-direction: column;
+}
+
+/* .boisson{
+  display: flex;
+flex-direction: column;
+} */
+
+.panier{
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+
+
+.frite
+{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 50%;
+}
+
+.montantPanier
+{
+  margin-left: 70%;
+}

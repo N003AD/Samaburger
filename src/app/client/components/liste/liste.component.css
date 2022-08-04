@@ -1,0 +1,7 @@
+.liste{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 5%;
+  padding: 2% 5%;
+}

@@ -1,0 +1,19 @@
+<!-- <app-header></app-header> -->
+
+<div class="card" style="width: 18rem;">
+  <!-- <img src="data:image/png;base64,{{details?.burger?.image}}" class="" alt="..." width="100%"> -->
+  <!-- <img src="data:image/png;base64,{{produits?.image}}" class="" alt="..." width="100%" height="100em"> -->
+
+
+  <img src="assets/images/burger.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ produits?.nom}}</h5>
+    <div class="card-titlr">{{produits?.prix}}</div>
+
+    <div class="d-flex justify-content-end">
+      <a href="#" class="btn btn-danger">Ajouter</a>
+    </div>
+</div>
+    <a class="btn btn-danger" routerLink="/client/details/{{produits?.id}}">Détails</a>
+  </div>
+<!-- <app-footer></app-footer> -->
