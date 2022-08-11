@@ -41,16 +41,17 @@
                 <a class="nav-link active" (click)="filtre('menu')" >Menu</a>
               </li>
             <li class="nav-item">
-              <a class="nav-link active" routerLink="login">Se Connecter</a>
+              <a class="nav-link active" routerLink="/login">Se Connecter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" routerLink="#">Créer un compte</a>
+              <a class="nav-link active" routerLink="/register">Créer un compte</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" routerLink="#">Panier</a>
-            </li>
+               {{(items$|async).length}}
+              <p><img src="assets/images/wallet.png" alt="" height="50" routerLink="/client/panier" >
+                <span class="d-flex text-center" >Panier</span>
+              <!-- <a class="nav-link active" routerLink="#">Panier</a> -->
+            </p>
             </div>
-
         </ul>
         </span>
       </div>

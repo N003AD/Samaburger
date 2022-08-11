@@ -1,0 +1,62 @@
+/* .imgPanier
+{
+width:10rem;
+height:10rem;
+}
+
+.btnPanier{
+  width:5rem;
+ height:5rem;
+ margin-left: 2rem;
+
+}
+
+
+.imgSup
+{
+  width:2rem;
+  height:2rem;
+}
+
+.supprimer
+{
+  cursor:pointer;
+} */
+
+/* .container{
+  display: flex;
+  justify-content: center;
+  align-its:center;em
+} */
+
+/* .price{
+  margin-left: 2rem;
+}
+
+.detail{
+  cursor:pointer;
+} */
+
+/* ##############################""""""" */
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
+  
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+  
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1))
+  }
+
+  .imgSup
+{
+  width:2rem;
+  height:2rem;
+}
+
+.supprimer
+{
+  cursor:pointer;
+}
+

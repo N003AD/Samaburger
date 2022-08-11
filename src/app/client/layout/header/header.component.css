@@ -45,3 +45,6 @@ a{
   color: blue;
 }
 
+p, img{
+  cursor:pointer;
+}

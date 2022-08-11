@@ -11,7 +11,11 @@
     <div class="card-titlr">{{produits?.prix}}</div>
 
     <div class="d-flex justify-content-end">
-      <a href="#" class="btn btn-danger">Ajouter</a>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button (click)="addPanier(produits)"  class="btn btn-danger me-md-2" type="button" >Ajouter</button>
+        <!-- <button class="btn-danger" type="button">Button</button> -->
+      </div>
+      <!-- <a href="#" class="btn btn-danger">Ajouter</a> -->
     </div>
 </div>
     <a class="btn btn-danger" routerLink="/client/details/{{produits?.id}}">Détails</a>

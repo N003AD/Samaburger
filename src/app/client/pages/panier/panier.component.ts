@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 @Component({
   selector: 'app-panier',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanierComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myService:CartService) { }
 
+  items$=this.myService.items$
+  
   ngOnInit(): void {
   }
-
+    deleteCommande(panier:any){
+      this.myService.suppanier(panier)
+    }
 }

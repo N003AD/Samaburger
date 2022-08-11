@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { CartService } from '../../../shared/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class HeaderComponent implements OnInit {
     @Output() clickChanged: EventEmitter<string>=new EventEmitter;
 
-  constructor() { }
+  constructor(private incrementProduct:CartService) { }
 
   ngOnInit(): void {
   }
+
+  items$=this.incrementProduct.items$
 
   filtre(value:string){
     this.clickChanged.emit(value);

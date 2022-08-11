@@ -1,6 +1,8 @@
-import { Details } from './../../../shared/models/details';
 import { DetailsService } from './../../../shared/services/details.service';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/shared/services/cart.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-details',
@@ -8,13 +10,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./details.component.css']
 })
 export class DetailsComponent implements OnInit {
- details:any|null=null
-  constructor( private myservice:DetailsService) { }
+  productDetails:Observable<any>|null=null;
+  details:any|null=null
+  DetailsService: any;
+  constructor( private myservice:DetailsService, private myService:CartService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
 
-    this.myservice.getDetails(18).subscribe((data)=>this.details=data)
+    const idDetails = this.route.snapshot.params['id']
+    // this.productDetails=this.DetailsService.getDetails(idDetails)
+
+    // this.details=this.DetailsService.getDetails(idDetails).subscribe((data)=>)
+     this.myservice.getDetails(idDetails).subscribe((data)=>this.details=data)
 
   }
-
+  addPanier(panier:any){
+    this.myService.addToCart(panier)
+   }
 }

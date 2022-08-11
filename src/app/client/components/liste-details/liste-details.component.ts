@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ListeDetailsComponent implements OnInit {
   @Input()  hideQte:boolean=false
+  @Input()  produits:any
   constructor() { }
 
   ngOnInit(): void {

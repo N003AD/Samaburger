@@ -79,3 +79,12 @@ flex-direction: column;
 {
   margin-left: 70%;
 }
+
+.portion
+{
+  width:5rem
+}
+
+.burger{
+  width:5rem
+}

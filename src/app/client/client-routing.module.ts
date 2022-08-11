@@ -1,8 +1,8 @@
-import { ClientModule } from './client.module';
 import { DetailsComponent } from './pages/details/details.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { PanierComponent } from './pages/panier/panier.component';
 
 const routes: Routes = [
   {
@@ -10,6 +10,8 @@ const routes: Routes = [
     component: CatalogueComponent
   }
 ,
+{ path: "panier",component: PanierComponent},
+
   {
     path: "",
     redirectTo:"catalogue",

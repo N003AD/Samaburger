@@ -1,1 +1,50 @@
-<p>register works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h6>Créer un Compte</h6>
+        </div>
+          <!-- <form #signInform="ngForm" (ngSubmit)="loginUser(signInform); "> -->
+  <form >
+    <div class="form-group mb-3">
+      <label for="exampleInputText">Genre</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre" name="genreField" required>
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputText">Nom & Prénom</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre" name="genreField" required>
+    </div>
+    <div class="form-group mb-3">
+      <label for="exampleInputEmail">Genre</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Genre" name="genreField" required >
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control"  id="exampleInputPassword1" placeholder="Password" name="passwordField" required>
+    </div>
+  <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-primary">Créer mon compte</button>
+  </div>
+ </form>
+  <a style="color: #fff; margin-top: 10px" routerLink="/login" >J'ai déjà inscrit? Cliquez pour vous connecter</a>
+
+</div>
+<!--
+<div class="container">
+  <form action="">
+    <div class="form-group">
+      <label for="">Adresse email</label>
+      <input type="text" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="">Mot de passe</label>
+      <input type="text" name="password" class="form-control">
+    </div>
+    <button class="btn btn-success"></button>
+  </form>
+      </div>
+    </div>
+  </div>
+</div> -->

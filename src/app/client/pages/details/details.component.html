@@ -36,30 +36,136 @@
              <button type="button" class="btn btn-danger btn-sm p-0 text-center w-25 fs-3">+</button>
            </div>
          </div>
-         <div class="row">
-          <div class="col-12 ">
-            <h4 class="mt-2">Burger</h4>
-            <app-liste-details ></app-liste-details>
-            <h4 class="mt-2">Frites</h4>
-            <app-liste-details></app-liste-details>
-            <h4>Les Boisssons du Menu</h4>
-            <app-liste-details [hideQte]="true"></app-liste-details>
+         {{details.produit['@type']}}
+
+         <div class="row" *ngIf="details.produit['@type']=='Menu'">
+              <div class="col-12 ">
+                <h4 class="mt-2">Burger</h4>
+                <!-- <app-liste-details ></app-liste-details> -->
+                <!-- <ng-container  > -->
+                            <table class="table table-bordered">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Image</th>
+                                  <th scope="col">Nom</th>
+                                  <th scope="col">Prix</th>
+                                  <th scope="col">Quantite</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let burger of details.produit.menuBurgers">
+                                  <th scope="row">1</th>
+                                  <td>
+                                    <img  src="data:image/png;base64,{{burger.burger.image}}" class="burger" alt="..." >
+                                  </td>
+                                  <td>{{burger.burger.nom}}</td>
+                                  <td>{{burger.burger.prix}}</td>
+                                  <td>{{burger.quantite}}</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                  <!-- <div class="row g-3 align-items-center mt-1">
+                    <div class="col-auto">
+                      <label for="inputPassword6" class="col-form-label fw">{{burger.burger.prix}}CFA</label>
+                    </div>
+                    <div class="col-4" *ngIf="hideQte">
+                      <input type="number" min="0" value="0" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    </div>
+                  </div> -->
+                  <!-- {{burger.burger.nom}}
+                  {{burger.burger.prix}}
+                  {{burger.quantite}}
+                   <img  src="data:image/png;base64,{{burger.burger.image}}" class="rounded float-start  " alt="..." > -->
 
 
+                  <!-- <app-liste-details [hideQte]="true" [produits]="details.produit.menuBurgers"></app-liste-details> -->
+                <!-- </ng-container> -->
+
+                <h4 class="mt-2">Frites</h4>
+                <!-- <app-liste-details></app-liste-details> -->
+                <!-- <ng-container > -->
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Quantite</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let portionFrite of details.produit.menuPortionFrites" >
+                        <th scope="row">1</th>
+                        <td>
+                          <img  src="data:image/png;base64,{{portionFrite.portionFrite.image}}" class="portion" alt="..." >
+                        </td>
+                        <td>{{portionFrite.portionFrite.nom}}</td>
+                        <td>{{portionFrite.portionFrite.prix}}</td>
+                        <td>{{portionFrite.quantite}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
 
 
-    </div>
+        <!-- <app-liste-details [hideQte]="true" [produits]="details.produit.menuBurgers"></app-liste-details> -->
+      <!-- </ng-container> -->
+                <h4>Les Boisssons du Menu</h4>
+                <!-- <app-liste-details [hideQte]="true"></app-liste-details> -->
+                <!-- <ng-container  > -->
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">Quantite</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let taille of details.produit.menuTailles">
+                        <th scope="row">1</th>
+                        <td>
+                          <img  src="data:image/png;base64,{{taille.taille.image}}" class="portion" alt="..." >
+                        </td>
+                        <td>{{taille.taille.libelle}}</td>
+                        <td>{{taille.taille.prix}}</td>
+                        <td>{{taille.quantite}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+        <!-- <app-liste-details [hideQte]="true" [produits]="details.produit.menuBurgers"></app-liste-details> -->
+      <!-- </ng-container> -->
+              </div>
          </div>
     </div>
     <div class="col-6 ">
           <h4>Autres Boisssons</h4>
-          <app-liste-details [hideQte]="true"></app-liste-details>
+          <app-liste-details [hideQte]="true" [produits]="details?.boisson"></app-liste-details>
           <h4 class="mt-2">Frites</h4>
-         <app-liste-details [hideQte]="true"></app-liste-details>
+         <app-liste-details [hideQte]="true" [produits]="details?.portionFrite"></app-liste-details>
 
 
   </div>
   </div>
   <div class="row ">
+     </div>
+
+     <div class="row ">
+    </div>
+
+     <div class=" d-flex justify-content-end justify-content-evenly">
+         <div class="d-flex justify-content-end ">
+              <button class="btn btn-light justify-content-lg-start" type="button" routerLink="/client/catalogue"><< Continuer mes achats</button>
+</div>
+         <div class="d-flex justify-content-start">
+           <button (click)="addPanier(details)"  class="btn btn-danger justify-content-lg-start" type="button" >Accéder à mon panier</button>
+         </div>
      </div>
 </div>
