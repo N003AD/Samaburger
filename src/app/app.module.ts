@@ -12,12 +12,12 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './securite/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    NotFoundComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

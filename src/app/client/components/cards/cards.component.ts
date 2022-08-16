@@ -21,6 +21,7 @@ export class CardsComponent implements OnInit {
   }
 
   addPanier(panier:any){
-   this.myService.addToCart(panier)
+    panier['quantite']=1
+    this.myService.addToCart(panier)
   }
 }

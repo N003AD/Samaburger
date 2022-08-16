@@ -2,7 +2,7 @@
 <div class="d-flex flex-column">
   <nav class="navbar navbar-expand-lg bg-warning">
     <div class="container-fluid">
-      <img src="assets/images/samaburger.png" class="" alt="..." width="7%">
+      <img src="assets/images/samaburger.png" routerLink="/client/catalogue" class="" alt="..." width="7%">
 
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,23 +32,26 @@
 
                 <!-- checkbox -->
               <li class="nav-item">
-                <a class="nav-link active" (click)="filtre('catalogue')">Catalogue</a>
+                <span><a class="nav-link active fs-4" (click)="filtre('catalogue')">Catalogue</a></span>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" (click)="filtre('burger')">Burger</a>
+                <span><a class="nav-link active fs-4 " (click)="filtre('burger')">Burger</a></span>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" (click)="filtre('menu')" >Menu</a>
+                <span><a class="nav-link active fs-4 " (click)="filtre('menu')" >Menu</a></span>
               </li>
             <li class="nav-item">
-              <a class="nav-link active" routerLink="/login">Se Connecter</a>
+              <a class="nav-link active fs-4" routerLink="/login" >Se Connecter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" routerLink="/register">Créer un compte</a>
+              <a class="nav-link active fs-4" routerLink="/register">Créer un compte</a>
             </li>
-               {{(items$|async).length}}
+               <div class="cart_value d-flex m-2">
+                <!-- <i class="fa fa-shopping-cart"></i> -->
+               <span class="increment" routerLink="/client/panier"> {{(items$|async).length}}</span>
+               </div>
               <p><img src="assets/images/wallet.png" alt="" height="50" routerLink="/client/panier" >
-                <span class="d-flex text-center" >Panier</span>
+                <span class="d-flex text-center" routerLink="/client/panier">Panier</span>
               <!-- <a class="nav-link active" routerLink="#">Panier</a> -->
             </p>
             </div>

@@ -1,5 +1,7 @@
 <app-header></app-header>
 
+<!-- {{details.boisson|json}} -->
+<!-- {{details.produit.prix|json}} -->
 
 
 <div class="container-fluid w-75  mt-5 shadow-lg p-3 mb-5 bg-light rounded" >
@@ -19,24 +21,24 @@
               <img src="data:image/png;base64,{{details?.produit?.image}}"  class="rounded  h-100 w-100 " alt="...">
              </div>
              <div class="col-5 fs-6 p-5">
-              Pain grillé, burger 130g, fromage,
-              oignon caramélisé, salade, tomate,
-               oignon rouge, cornichons,
-              mayonnaise sauce et sauce
-              salad spéciale
+           
+              {{details?.produit?.description}}
 
 
             </div>
          </div>
          <div class="row  mt-2">
-          <h4 class="" >Burger Double</h4>
+          <div class="d-flex gap-5">
+            <h4 class="" >{{details?.produit.nom}}</h4>
+          <span class="fs-4">{{details?.produit.prix}}Fcfa</span>
+          </div>
           <div class="row p-3 gap-2 w-50">
             <button type="button" class="btn btn-danger btn-sm p-0 text-center w-25 fs-3">-</button>
-             <input type="number" class="form-control text-center w-25 fs-3 " id="input1" aria-describedby="emailHelp">
+             <input #quantiteProd type="number" class="form-control text-center w-25 fs-3 " id="input1" aria-describedby="emailHelp" value="1">
              <button type="button" class="btn btn-danger btn-sm p-0 text-center w-25 fs-3">+</button>
            </div>
          </div>
-         {{details.produit['@type']}}
+         <!-- {{details.produit['@type']}} -->
 
          <div class="row" *ngIf="details.produit['@type']=='Menu'">
               <div class="col-12 ">
@@ -147,6 +149,16 @@
     </div>
     <div class="col-6 ">
           <h4>Autres Boisssons</h4>
+          <!-- <table>
+            <tr *ngFor="let boisson of details.boisson">
+              <th scope="row">1</th>
+              <td>
+                <img  src="data:image/png;base64,{{boisson.image}}" class="portion" alt="..." >
+              </td>
+              <td>{{boisson.nom}}</td>
+              <td>{{boisson.prix}}</td>
+            </tr>
+          </table> -->
           <app-liste-details [hideQte]="true" [produits]="details?.boisson"></app-liste-details>
           <h4 class="mt-2">Frites</h4>
          <app-liste-details [hideQte]="true" [produits]="details?.portionFrite"></app-liste-details>
@@ -165,7 +177,9 @@
               <button class="btn btn-light justify-content-lg-start" type="button" routerLink="/client/catalogue"><< Continuer mes achats</button>
 </div>
          <div class="d-flex justify-content-start">
-           <button (click)="addPanier(details)"  class="btn btn-danger justify-content-lg-start" type="button" >Accéder à mon panier</button>
+           <button (click)="addPanier(details.produit, quantiteProd.value)"  class="btn btn-danger justify-content-lg-start" type="button" routerLink="/client/panier">Accéder à mon panier</button>
          </div>
      </div>
 </div>
+<!-- (click)="addPanier(produits)" -->
+

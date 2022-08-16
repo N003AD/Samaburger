@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 // import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  onLogin() {
+    this.auth.login();
+    this.router.navigateByUrl('/client/catalogue');
   }
   // loginUser(signInform: NgForm){
   //   console.log(signInform);

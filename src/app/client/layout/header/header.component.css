@@ -48,3 +48,32 @@ a{
 p, img{
   cursor:pointer;
 }
+
+.cart_value{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  border: 1px solid red;
+  border-radius: 50%;
+  padding: 4px 10px;
+}
+
+.increment{
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-item{
+  cursor: pointer;
+  color: #fff;
+
+}
+
+a:hover{
+  background-color: red;
+}
+
+span{
+  cursor:pointer;
+}

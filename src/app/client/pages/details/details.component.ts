@@ -24,7 +24,8 @@ export class DetailsComponent implements OnInit {
      this.myservice.getDetails(idDetails).subscribe((data)=>this.details=data)
 
   }
-  addPanier(panier:any){
+  addPanier(panier:any, quantite:any){
+    panier.quantite=quantite
     this.myService.addToCart(panier)
    }
 }

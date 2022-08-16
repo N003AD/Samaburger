@@ -43,4 +43,34 @@ export class CartService {
       }),
     ).subscribe();
   }
+
+  increment(product: Produits, incrementProduct: any){
+    this.items$.pipe(
+      take(1),
+      map((products) => {
+        products.forEach((el:any) =>{
+          if(el.id === product.id){
+            el.quantite=incrementProduct;
+          }
+        });
+        localStorage.setItem('produit', JSON.stringify(products));
+      })
+    )
+    .subscribe();
+  }
+
+
+PricePanier(){
+  let tab=0
+  this.items$.pipe(
+    map((produits) => {
+      produits.forEach((element:any) =>{
+        tab+=(element.prix * element.quantite)
+      });
+      localStorage.setItem('produit', JSON.stringify(produits));
+    })
+  ).subscribe();
+  return tab
+}
+
 }

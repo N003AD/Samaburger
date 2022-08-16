@@ -1,14 +1,18 @@
 <!-- <app-header></app-header> -->
-
 <div class="card" style="width: 18rem;">
   <!-- <img src="data:image/png;base64,{{details?.burger?.image}}" class="" alt="..." width="100%"> -->
   <!-- <img src="data:image/png;base64,{{produits?.image}}" class="" alt="..." width="100%" height="100em"> -->
 
 
   <img src="assets/images/burger.png" class="card-img-top" alt="...">
+  <!-- <img src="data:image/png;base64,{{produits?.image}}"  class="rounded  h-100 w-100 " alt="..."> -->
+
   <div class="card-body">
+    <!-- {{produits.prix|json}} -->
+
     <h5 class="card-title">{{ produits?.nom}}</h5>
-    <div class="card-titlr">{{produits?.prix}}</div>
+    <div class="card-title">{{produits.prix}}</div>
+    <!-- {{produits|json}} -->
 
     <div class="d-flex justify-content-end">
       <div class="d-grid gap-2 d-md-flex justify-content-md-end">

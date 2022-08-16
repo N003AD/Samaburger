@@ -1,3 +1,4 @@
+import { AuthGuard } from './../core/guards/auth.guard';
 import { DetailsComponent } from './pages/details/details.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,7 @@ const routes: Routes = [
     component: CatalogueComponent
   }
 ,
-{ path: "panier",component: PanierComponent},
+{ path: "panier",component: PanierComponent, canActivate: [AuthGuard]},
 
   {
     path: "",

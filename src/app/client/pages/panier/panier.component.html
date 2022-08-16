@@ -1,72 +1,14 @@
 <app-header></app-header>
-<!-- 
 
-<ng-container *ngIf="true">
-  <div class="container">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col fs-3 ">#</th>
-          <th scope="col" class="text-center fs-3 ">Image</th>
-          <th scope="col" class="text-center fs-3 ">Prix</th>
-        </tr>
-      </thead>
-      <tbody class="table-group-divider">
-        <tr>
-          <th scope="row" class="text-center fs-3 ">1</th>
-          <td class="row">
-              <img src="assets/images/burger.png" alt="" class="imgPanier">
-            <div class="col p-5">
-              <span class="fs-3">Burger poulet</span>
-             <div>
-              Pain grillé, burger 130g, fromage,
-              oignon caramélisé, <br>
-               salade, tomate, oignon rouge, cornichons,
-              mayonnaise <br> sauce et sauce
-              salad spéciale
-             </div>
-            </div>
-           
-            <div class=" supprimer fs-5"><img src="assets/images/sup.jpg" alt="" class="imgSup">
-            <span class="text-center">Supprimer </span>
-            </div> -->
 
-            <!-- <div class="row gap-2  btnPanier flex-column">
-              <button type="button" class="btn btn-danger ">-</button>
-               <input type="number" class="form-control " id="input1" aria-describedby="emailHelp">
-               <button type="button" class="btn btn-danger ">+</button>
-               <p><img src="assets/images/sup.jpg" alt="" class="imgSup">
-              </p>
-               <p>Details</p>
-              </div> -->
-          <!-- </td>
-          <td>
-            <div class="price row">
-              <p class="text-center fs-4">3500 Fcfa</p>
-              <div class="row gap-2 d-flex justify-content-center  btnPanier flex-column">
-                <button type="button" class="btn btn-danger ">-</button>
-                 <input type="number" class="form-control " id="input1" aria-describedby="emailHelp">
-                 <button type="button" class="btn btn-danger ">+</button>
-               
-                 <p class="fs-4 text-center detail" routerLink="/client/details/3">Details</p>
-                </div>
-              </div>
-            </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
-</ng-container> -->
 
-<!-- ########################################################### -->
 <section class="h-100 h-custom" style="background-color: #eee;">
   <div class="container py-5">
     <div class="row d-flex justify-content-center my-4">
       <div class="col-md-8">
         <div class="card mb-4">
           <div class="card-header py-3">
-            <h5 class="mb-0">Panier(2)</h5>
+            <h5 class="mb-0">Panier({{(items$|async).length}})</h5>
           </div>
           <div class="card-body">
             <!-- Single item -->
@@ -87,7 +29,7 @@
               <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                 <!-- Data -->
                 <p><strong>{{panier.nom}}</strong></p>
-                <p>   Pain grillé, burger 130g, fromage,
+                <p>Pain grillé, burger 130g, fromage,
                   oignon caramélisé, <br>
                    salade, tomate, oignon rouge, cornichons,
                   mayonnaise <br> sauce et sauce
@@ -120,33 +62,34 @@
                   </div> -->
 
                 <div class="d-flex mb-4" style="max-width: 300px">
-                  <button class="btn btn-primary px-3 me-2"
+                  <button  (click)="incrementProduct1(panier, quantityDecrement.value); calculSomme()" class="btn btn-primary px-3 me-2"
                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                     <i class="fas fa-minus"></i>
                   </button>
 
                   <div class="form-outline">
-                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                    <label class="form-label" for="form1">Quantity</label>
+                    <input  #quantityDecrement (change)="incrementProduct1(panier, quantityDecrement.value); calculSomme()" id="form1" min="0" name="quantity" value="{{panier.quantite}}" type="number" class="form-control" />
+                    <label class="form-label d-flex justify-content-center" for="form1">Quantite</label>
                   </div>
 
-                  <button class="btn btn-primary px-3 ms-2"
+                  <button  (click)="incrementProduct1(panier, quantityDecrement.value); calculSomme()" class="btn btn-primary px-3 ms-2"
                     onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                     <i class="fas fa-plus"></i>
                   </button>
                 </div>
-                <!-- Quantity -->
+                <!-- Quantite -->
 
                 <!-- Price -->
                 <p class="text-start text-md-center">
-                  <strong>{{panier.prix}}</strong>
+                  <strong>{{panier.prix * panier.quantite}}</strong>
+                  <!-- {{panier|json}} -->
                 </p>
                 <!-- Price -->
               </div>
+              <hr class="my-4" />
             </div>
             <!-- Single item -->
 
-            <hr class="my-4" />
 
 
             <!-- Single item -->
@@ -165,11 +108,11 @@
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                 Menu avec portion Frite
-                <span>$53.98</span>
+                <span>5700</span>
               </li>
               <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                 Burger Simple
-                <span>Gratis</span>
+                <span>4900</span>
               </li>
               <li
                 class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
@@ -179,7 +122,7 @@
                     <p class="mb-0">(including VAT)</p>
                   </strong> -->
                 </div>
-                <span><strong>53.98 Fcfa</strong></span>
+                <span><strong>{{recupPrixTotal}}</strong></span>
               </li>
             </ul>
 
