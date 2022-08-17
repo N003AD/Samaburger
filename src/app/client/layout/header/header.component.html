@@ -41,7 +41,11 @@
                 <span><a class="nav-link active fs-4 " (click)="filtre('menu')" >Menu</a></span>
               </li>
             <li class="nav-item">
-              <a class="nav-link active fs-4" routerLink="/login" >Se Connecter</a>
+              <a class="nav-link active fs-4" routerLink="/auth/login" >Se Connecter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fs-4"(click)="logout()" routerLink="/auth/login" >Se déconnecter</a>
+              <!-- <button (click)="logout()">Déconnecter</button> -->
             </li>
             <li class="nav-item">
               <a class="nav-link active fs-4" routerLink="/register">Créer un compte</a>

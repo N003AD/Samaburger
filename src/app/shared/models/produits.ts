@@ -4,6 +4,8 @@ export interface Produits
   nom:string;
   prix:number;
   image:Blob;
+  "@type"?:string;
+
   quantite?:number;
 }
 

@@ -1,3 +1,4 @@
+import { TokenService } from 'src/app/_services/token.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { CartService } from '../../../shared/services/cart.service';
 
@@ -9,7 +10,7 @@ import { CartService } from '../../../shared/services/cart.service';
 export class HeaderComponent implements OnInit {
     @Output() clickChanged: EventEmitter<string>=new EventEmitter;
 
-  constructor(private incrementProduct:CartService) { }
+  constructor(private incrementProduct:CartService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
   }
@@ -21,4 +22,7 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  logout(): void {
+    this.tokenService.clearToken()
+  }
 }

@@ -22,14 +22,14 @@ import { ListeDetailsComponent } from './components/liste-details/liste-details.
     CatalogueComponent,
     DetailsComponent,
     CardDetailsComponent,
-    ListeDetailsComponent,
+    ListeDetailsComponent
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     LayoutModule,
     RouterModule
-  ],
+    ],
   exports: [
     CommonModule,
     ClientRoutingModule,

@@ -1,4 +1,4 @@
-import { AuthGuard } from './../core/guards/auth.guard';
+import { CommandeComponent } from './pages/commande/commande.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CatalogueComponent } from './pages/catalogue/catalogue.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +11,7 @@ const routes: Routes = [
     component: CatalogueComponent
   }
 ,
-{ path: "panier",component: PanierComponent, canActivate: [AuthGuard]},
+{ path: "panier",component: PanierComponent},
 
   {
     path: "",
@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: "details/:id",
     component: DetailsComponent
+  },
+  {
+    path: "commande",
+    component: CommandeComponent
   }
 ];
 
