@@ -1,4 +1,4 @@
-import { CommandeService } from '../../../shared/services/commande.service';
+import { CommandeService } from '../../shared/services/commande.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -22,7 +22,7 @@ export class CommandeComponent implements OnInit {
   ngOnInit(): void {
   this.myService.commande().subscribe((data)=>{
     this.priva= data;
-     console.log(this.priva)
+    //  console.log(this.priva)
 
    })
   }

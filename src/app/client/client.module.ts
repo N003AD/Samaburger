@@ -1,3 +1,4 @@
+import { CommandeFilterClientPipe } from './commande-client/commande-client-filter.pipe';
 import { HeaderComponent } from './layout/header/header.component';
 import { RouterModule } from '@angular/router';
 import { DetailsComponent } from './pages/details/details.component';
@@ -12,6 +13,7 @@ import { ListeComponent } from './components/liste/liste.component';
 import { LayoutModule } from './layout/layout.module';
 import { CardDetailsComponent } from './components/card-details/card-details.component';
 import { ListeDetailsComponent } from './components/liste-details/liste-details.component';
+import { CommandeClientComponent } from './commande-client/commande-client.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ListeDetailsComponent } from './components/liste-details/liste-details.
     CatalogueComponent,
     DetailsComponent,
     CardDetailsComponent,
-    ListeDetailsComponent
+    ListeDetailsComponent,
+    CommandeClientComponent,
+    CommandeFilterClientPipe
   ],
   imports: [
     CommonModule,
