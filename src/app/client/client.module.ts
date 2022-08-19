@@ -1,3 +1,4 @@
+import { NgxPaginationModule } from 'ngx-pagination';
 import { CommandeFilterClientPipe } from './commande-client/commande-client-filter.pipe';
 import { HeaderComponent } from './layout/header/header.component';
 import { RouterModule } from '@angular/router';
@@ -32,7 +33,9 @@ import { CommandeClientComponent } from './commande-client/commande-client.compo
     CommonModule,
     ClientRoutingModule,
     LayoutModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
+
     ],
   exports: [
     CommonModule,

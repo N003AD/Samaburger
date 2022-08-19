@@ -11,6 +11,10 @@ export class CommandeClientComponent implements OnInit {
 
   listeClient : any;
   @Input() searchTerm: string='';
+
+  pages: number = 1;
+  dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
+
   constructor(private myService: CommandeService, private http: HttpClient) { }
 
   ngOnInit(): void {

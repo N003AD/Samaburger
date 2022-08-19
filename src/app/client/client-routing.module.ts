@@ -25,16 +25,8 @@ const routes: Routes = [
     component: DetailsComponent
   },
   {
-    path: "commande",
-    component: CommandeComponent
-  },
-  {
     path: "commande-client",
     component: CommandeClientComponent
-  },
-  {
-    path: "lister-zone",
-    component: ZoneComponent
   }
 ];
 

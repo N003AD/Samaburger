@@ -10,6 +10,7 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { commandeFilterPipeZone } from './commande/commande-filterZone.pipe';
 import { ZoneComponent } from './zone/zone.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 @NgModule({
@@ -25,7 +26,9 @@ import { ZoneComponent } from './zone/zone.component';
     CommonModule,
     AdminRoutingModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
+
   ]
 })
 export class AdminModule { }
