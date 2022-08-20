@@ -85,10 +85,11 @@
         <div class="col-4">
           <form>
             <div class="form-group">
-              <label for="id">Filtre par categorie</label>
-                <select  class="form-control" ngModel  name="id" id="id" >
-                  <option value=""></option>
-                  <option ></option>
+              <label for="id">Filtre par état</label>
+                <select  class="form-control" [(ngModel)]="searchTerm"   name="id" id="id" >
+                  <option  value="En cours">En cours</option>
+                  <option  value="Terminé">Terminé</option>
+                  <option  value="Validé">Validé</option>
                 </select>
             </div>
           </form>
@@ -111,14 +112,15 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let item of priva | commandeFilter:searchTerm | commandeFilterZone:filterZone
-            |commandeFilterDate:filterDate | paginate: { itemsPerPage: 2, currentPage: pages }
+            <tr *ngFor="let item of priva | commandeFilter:searchTerm | commandeFilterZone:filterZone | filter:filterDate
+
+             | paginate: { itemsPerPage: 5, currentPage: pages }
 
            ">
                 <th scope="row">{{item.id}}</th>
                 <td>{{item.reference}}</td>
                 <td>{{item.montant}}</td>
-                <td>{{item.dateAt | date}}</td>
+                <td>{{item.dateAt | date: 'dd/MM:YYYY'}}</td>
                 <td>{{item.zone.nom}}</td>
                 <td><a class="btn-info btn">{{item.etat}}</a></td>
               <!-- <td><a class="btn-info btn">edit</a></td>-->

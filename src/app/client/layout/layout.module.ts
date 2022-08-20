@@ -1,3 +1,4 @@
+// import { Ng2SearchPipeModule } from 'ng2-search-filter/src/ng2-filter.module';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -17,7 +18,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     CommonModule,
     RouterModule,
-    LayoutRoutingModule
+    LayoutRoutingModule,
+    // Ng2SearchPipeModule
   ],
   exports: [
     HeaderComponent,

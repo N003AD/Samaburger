@@ -1,3 +1,5 @@
+import { LivreurComponent } from './livreur/livreur.component';
+import { ListeComponent } from './../client/components/liste/liste.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -17,6 +19,10 @@ const routes: Routes = [
   {
     path: "lister-zone",
     component: ZoneComponent
+  },
+  {
+    path: "livreur",
+    component: LivreurComponent
   }
 ];
 

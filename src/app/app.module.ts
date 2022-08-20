@@ -1,3 +1,4 @@
+import { NgToastModule } from 'ng-angular-popup';
 import { RouterModule } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ClientModule } from './client/client.module';
@@ -14,7 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

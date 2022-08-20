@@ -11,7 +11,7 @@ export class TokenService {
   saveToken(token: string):void {
     localStorage.setItem('token', token)
     // this.router.navigate([''])
-    this.router.navigate(['/client/panier'])
+    // this.router.navigate(['/client/panier'])
   }
 
   isLogged(): boolean{

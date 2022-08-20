@@ -10,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CommandeClientComponent implements OnInit {
 
   listeClient : any;
+  filterDate: any;
   @Input() searchTerm: string='';
 
   pages: number = 1;

@@ -1,3 +1,4 @@
+import { LivreurFilterPipe } from './livreur/filter-livreur.pipe';
 import { commandeFilterPipeDate } from './commande/commande-filterDate.pipe';
 import { LayoutModule } from './../client/layout/layout.module';
 import { CommandeComponent } from './commande/commande.component';
@@ -11,6 +12,8 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { commandeFilterPipeZone } from './commande/commande-filterZone.pipe';
 import { ZoneComponent } from './zone/zone.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LivreurComponent } from './livreur/livreur.component';
 
 
 @NgModule({
@@ -20,14 +23,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommandeFilterPipe,
     commandeFilterPipeZone,
     commandeFilterPipeDate,
-    ZoneComponent
+    ZoneComponent,
+    LivreurComponent,
+    LivreurFilterPipe
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     LayoutModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
 
   ]
 })

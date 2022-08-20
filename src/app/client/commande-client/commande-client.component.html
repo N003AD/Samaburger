@@ -13,9 +13,12 @@
           <form>
              <div class="form-group">
                <label for="keyword">Recherche</label>
-               <input  placeholder="Tapez votre mot de clet de recherche ici!!" type="text" name="keyword" id="keyword" class="form-control">
+               <input [(ngModel)]="searchTerm"   placeholder="Tapez votre mot de clet de recherche ici!!" type="text" name="keyword" id="keyword" class="form-control">
               </div>
-
+              <div class="form-group">
+                <label for="keyword">Recherche</label>
+                <input [(ngModel)]="filterDate"  placeholder="Filtrer par zone" type="date" name="keyword" id="keyword" class="form-control">
+               </div>
 
               <!-- <div class="form-group">
                 <label for="keyword">Recherche</label>
@@ -33,10 +36,11 @@
           <form>
             <div class="form-group">
               <label for="id">Filtre par categorie</label>
-                <select  class="form-control" ngModel  name="id" id="id" >
-                  <option value=""></option>
-                  <option ></option>
-                </select>
+              <select  class="form-control" [(ngModel)]="searchTerm"   name="id" id="id" >
+                <option  value="En cours">En cours</option>
+                <option  value="Terminé">Terminé</option>
+                <option  value="Validé">Validé</option>
+              </select>
             </div>
           </form>
         </div>
@@ -61,11 +65,11 @@
             <tbody>
             <!-- <tr *ngFor="let item of priva | commandeFilter:searchTerm | commandeFilterZone:filterZone |commandeFilterDate:filterDate"> -->
 
-            <tr *ngFor="let item of listeClient | commandeFilter:searchTerm | paginate: { itemsPerPage: 2, currentPage: pages }">
+            <tr *ngFor="let item of listeClient | commandeFilter:searchTerm | filter:filterDate | paginate: { itemsPerPage: 2, currentPage: pages }">
                 <th scope="row"></th>
                 <td>{{item.id}}</td>
                 <td>{{item.montant}}</td>
-                <td>{{item.dateAt}}</td>
+                <td>{{item.dateAt | date: 'dd/MM:YYYY'}}</td>
                 <!-- <td>{{item.zone.nom}}</td> -->
                 <td><a class="btn-info btn">{{item.etat}}</a></td>
               <!-- <td><a class="btn-info btn">edit</a></td> -->

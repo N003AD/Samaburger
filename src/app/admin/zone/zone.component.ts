@@ -12,7 +12,7 @@ export class ZoneComponent implements OnInit {
 
   pages: number = 1;
   dataset: any[] = ['1','2','3','4','5','6','7','8','9','10'];
-  
+
   constructor(private zone:ZoneService) { }
 
   ngOnInit(): void {
@@ -25,4 +25,19 @@ export class ZoneComponent implements OnInit {
     )
   }
 
+  searchText: any;
+  heroes = [
+    { id: 1  },
+    { id: 2},
+    { id: 3},
+    { id: 4},
+    { id: 5},
+    { id: 6},
+    { id: 7},
+    { id: 8},
+    { id: 9},
+    { id: 10},
+    { id: 11}
+
+  ];
 }
