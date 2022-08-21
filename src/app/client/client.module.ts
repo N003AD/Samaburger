@@ -17,7 +17,7 @@ import { CardDetailsComponent } from './components/card-details/card-details.com
 import { ListeDetailsComponent } from './components/liste-details/liste-details.component';
 import { CommandeClientComponent } from './commande-client/commande-client.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 
 @NgModule({
     declarations: [
@@ -38,7 +38,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     LayoutModule,
     RouterModule,
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+      ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    })
 
     ],
   exports: [

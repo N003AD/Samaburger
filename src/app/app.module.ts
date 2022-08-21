@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,10 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AuthRoutingModule,
-    NgToastModule
+    NgToastModule,
+    ConfirmationPopoverModule.forRoot({
+      confirmButtonType: 'danger', // set defaults here
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

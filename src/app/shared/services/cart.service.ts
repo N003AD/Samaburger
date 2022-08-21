@@ -6,6 +6,7 @@ import { Produits } from '../models/produits';
   providedIn: 'root'
 })
 export class CartService {
+  Refreshrequired: any;
 
   constructor() {
     let existingCartItems = JSON.parse(localStorage.getItem('products')|| '[]');

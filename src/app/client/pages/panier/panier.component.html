@@ -36,9 +36,21 @@
                   salad spéciale</p>
                 <!-- <p>Size: M</p> -->
                 <div class=" supprimer fs-5">
-                      <img src="assets/images/sup.jpg" alt="" class="imgSup" (click)="deleteCommande(panier)">
-                      <span class="text-center" (click)="deleteCommande(panier)">Supprimer </span>
+                  <img src="assets/images/sup.jpg" alt="" class="imgSup" (click)="deleteCommande(panier)">
+                  <span class="text-center" (click)="deleteCommande(panier)">Supprimer </span>
                 </div>
+                <button
+                class="btn btn-outline-secondary"
+                mwlConfirmationPopover
+                [popoverTitle]="popoverTitle"
+                [popoverMessage]="popoverMessage"
+                placement="left"
+                (confirm)="confirmClicked = true"
+                (cancel)="cancelClicked = true"
+              >
+click me
+            </button>
+
                 <!-- <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
                   title="Remove item">
                   <i class="fas fa-trash"></i>
@@ -62,13 +74,13 @@
                   </div> -->
 
                 <div class="d-flex mb-4" style="max-width: 300px">
-                  <button  (click)="incrementProduct1(panier, quantityDecrement.value); calculSomme()" class="btn btn-primary px-3 me-2"
+                  <button  (click)="incrementProduct1(panier, quantityDecrement.value); calculSomme()"  class="btn btn-primary px-3 me-2"
                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                     <i class="fas fa-minus"></i>
                   </button>
 
                   <div class="form-outline">
-                    <input  #quantityDecrement (change)="incrementProduct1(panier, quantityDecrement.value); calculSomme()" id="form1" min="0" name="quantity" value="{{panier.quantite}}" type="number" class="form-control" />
+                    <input  #quantityDecrement (change)="incrementProduct1(panier, quantityDecrement.value); calculSomme();" id="form1" min="0" name="quantity" value="{{panier.quantite}}" type="number" class="form-control" />
                     <label class="form-label d-flex justify-content-center" for="form1">Quantite</label>
                   </div>
 
